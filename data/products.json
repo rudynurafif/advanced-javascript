@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Poco X3 Pro",
+    "produsen": "Xiaomi",
+    "os": "Android",
+    "country": "China",
+    "comsumerId": 1
+  },
+  {
+    "name": "Samsung Galaxy Note 10",
+    "produsen": "Samsung",
+    "os": "Android",
+    "country": "Korea Selatan",
+    "comsumerId": 2
+  },
+  {
+    "name": "iPhone 12 Pro Max",
+    "produsen": "Apple",
+    "os": "iOS",
+    "country": "Amerika Serikat",
+    "comsumerId": 3
+  }
+]
