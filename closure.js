@@ -12,8 +12,8 @@ Closure di bagian bawah
 
 */
 
-// console.log(nama);
-// var nama = 'Rudy Nurafif';
+console.log(nama);
+var nama = 'Rudy Nurafif';
 
 // creation phase pada Global Context
 // nama var = undefined
@@ -30,43 +30,46 @@ Closure di bagian bawah
 // arguments
 // hoisting
 
-// var nama = 'Rudy Nurafif';
-// var username = 'rudynurafif';
+var nama = 'Rudy Nurafif';
+var username = 'rudynurafif';
 
-// function cetakURL(username) {
-//   var instagramURL = 'http://instagram.com/';
-//   return instagramURL + username;
-// }
+function cetakURL(username) {
+  var instagramURL = 'http://instagram.com/';
+  return instagramURL + username;
+}
 
-// console.log(cetakURL(username));
+console.log(cetakURL(username));
 
-// function a() {
-//   console.log('ini a');
 
-//   function b() {
-//     console.log('ini b');
+// execution stack
+function a() {
+  console.log('ini a');
 
-//     function c() {
-//       console.log('ini c');
-//     }
-//     c();
-//   }
-//   b();
-// }
-// a();
+  function b() {
+    console.log('ini b');
 
-// function satu() {
-//   var nama = "Rudy";
-//   console.log(nama);
-// }
-// function dua() {
-//   console.log(nama);
-// }
-// console.log(nama);
-// var nama = "Asa";
-// satu();
-// dua('Nurafif');
-// console.log(nama);
+    function c() {
+      console.log('ini c');
+    }
+    c();
+  }
+  b();
+}
+a(); // a > b > c
+
+
+function satu() {
+  var nama = "Rudy";
+  console.log(nama);
+}
+function dua() {
+  console.log(nama);
+}
+console.log(nama);
+var nama = "Asa";
+satu();
+dua('Nurafif');
+console.log(nama);
 
 // =========================================================
 
@@ -83,26 +86,25 @@ Kenapa closure?
 
 */
 
-// function init() {
-//   return function(nama) {
-//     console.log(nama);
-//   }
-// }
-// let panggilNama = init();
-// panggilNama('Rudy');
+function init() {
+  return function(nama) { // closure
+    console.log(nama);
+  }
+}
+let panggilNama = init();
+panggilNama('Rudy');
 
-// function ucapkanSalam(waktu) {
-//   return function(nama) {
-//     console.log(`Halo ${nama}, Selamat ${waktu}, semoga harimu menyenangkan!`);
-//   }
-// }
+function ucapkanSalam(waktu) {
+  return function(nama) {
+    console.log(`Halo ${nama}, Selamat ${waktu}, semoga harimu menyenangkan!`);
+  }
+}
+let selamatPagi = ucapkanSalam('Pagi');
+let selamatSiang = ucapkanSalam('Siang');
+let selamatMalam = ucapkanSalam('Malam');
 
-// let selamatPagi = ucapkanSalam('Pagi');
-// let selamatSiang = ucapkanSalam('Siang');
-// let selamatMalam = ucapkanSalam('Malam');
-
-// selamatPagi('Rudy');
-// selamatMalam('Nurafif');
+selamatPagi('Rudy');
+selamatMalam('Nurafif');
 
 let add = (function() {
   let counter = 0;

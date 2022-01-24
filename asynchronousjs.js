@@ -28,8 +28,9 @@ Javascript is a single-threaded non-blocking, asynchronus and concurrent languag
 
 */
 
-/*
+// =========================================================================
 
+/*
 Callback
 "adalah sebuah function yang dikirimkan sebagai parameter pada function yang lain"
 "adalah function yang dieksekusi setelah fungsi lain selesai dijalankan"

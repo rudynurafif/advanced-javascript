@@ -1,12 +1,14 @@
 /*
 
-Higher Order Function adalah function yang beroperasi pada function yang lain. Baik itu digunakan dalam argument, maupun sebagai return value.
+Higher Order Function adalah function yang beroperasi pada function yang lain. Baik itu digunakan dalam Argument, maupun sebagai Return Value.
+
+Function yang utama disebut Higher Order Function, dan function yang digunakan sebagai parameter dalam function utama / HOF tsbt disebut callback
 
 First Class Function
 
 Javascript memperlakukan function sebagai object
 
-Mengapa harus HOF? Untuk abstraksi, agar kode lebih sederhana.
+Mengapa harus HOF? Untuk abstraksi, agar kode dapat lebih sederhana.
 
 Functional Programming
 
@@ -14,28 +16,28 @@ Functional Programming
 
 // Apa itu HOF dan perilakunya?
 
-// function ucapkanSalam(waktu) {
-//   return function(nama) {
-//     console.log(`Halo ${nama}, selamat ${waktu}, semoga harimu menyenangkan!`);
-//   }
-// }
-// let selamatMalam = ucapkanSalam('Malam');
-// console.log(selamatMalam('Rudy'));
+function ucapkanSalam(waktu) {
+  return function(nama) {
+    console.log(`Halo ${nama}, selamat ${waktu}, semoga harimu menyenangkan!`);
+  }
+}
+let selamatMalam = ucapkanSalam('Malam');
+console.log(selamatMalam('Rudy'));
 
-// function repeat(n, action) {
-//   for (let i = 1; i <= n; i++) {
-//     action(i);
-//   }
-// }
-// repeat(10, console.log);
-// repeat(3, alert);
+function repeat(n, action) {
+  for (let i = 1; i <= n; i++) {
+    action(i);
+  }
+}
+repeat(10, console.log);
+repeat(3, alert);
 
 // ====================================================================
 
 // 3 contoh dari HOF yang sering digunakan
-// Array.prototype.filter()
-// Array.prototype.map()
-// Array.prototype.reduce()
+Array.prototype.filter()
+Array.prototype.map()
+Array.prototype.reduce()
 
 // const angka = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
 
